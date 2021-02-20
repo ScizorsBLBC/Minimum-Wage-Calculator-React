@@ -1,0 +1,87 @@
+#root {
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    min-height:100vh;
+    font-family: 'Ubuntu', sans-serif;
+    margin: 20px;
+} 
+
+body {
+    background-color: #0F070D;
+    color: #E3C5E3;
+    
+}
+
+main {
+   
+}
+
+.answer {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+section{
+    background:rgb(250, 197, 205);
+    padding:10px;
+    margin:20px;
+    line-height: 1.5em;
+    
+}
+
+.boldedRow {
+    font-weight: 700;
+}
+
+.calculator__num-weeks-worked-input, .calculator__hours-per-week-worked-input, select {
+    border-color:  #0F070D;
+    background-color:  #E3C5E3;
+    max-width:300px;
+    margin:0 0 20px 0;
+}
+
+
+.calculator__submit-button {
+    border-color:  #0F070D;
+    background-color:  #E3C5E3;
+    color:  #0F070D;
+    max-width:300px;
+    margin:0 0 20px 0;
+}
+
+.calculator__state-select-input {
+    border:  2px solid #0F070D;
+}
+
+.Calculator {
+    display:flex;
+    flex-direction:column;
+    color:  #0F070D;
+}
+
+.WageTable table{
+    background-color:  #E3C5E3;
+    color:  #0F070D;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    
+}
+
+.WageTable th, .WageTable td, .WageTable tr {
+    color:  #0F070D;
+    border:  2px solid #0F070D;
+    padding: 5px;
+    
+}
+
+input {
+    border-color:  #E3C5E3;
+    background-color:  #E3C5E3;
+    color:  #0F070D;
+}
+
+footer {
+    margin: 60px 20px 20px 20px;
+    border-top: .5px solid  #E3C5E3;
+}
