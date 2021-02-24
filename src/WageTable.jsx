@@ -22,7 +22,10 @@ const WageTable = (props) => {
                             Yearly Income
                         </th>
                         <th>
-                            Yearly Income @ $15/ Hour
+                            @ $15 / Hour
+                        </th>
+                        <th>
+                            @ $24 / Hour
                         </th>
                     </tr>
                 </thead>
@@ -40,6 +43,9 @@ const WageTable = (props) => {
                             </td>
                             <td>
                                 {numberFormat(15 * (props.hoursPerWeekWorked || 40) * (props.numWeeksWorked || 50))}
+                            </td>
+                            <td>
+                                {numberFormat(24 * (props.hoursPerWeekWorked || 40) * (props.numWeeksWorked || 50))}
                             </td>
                         </tr>
                     ))}

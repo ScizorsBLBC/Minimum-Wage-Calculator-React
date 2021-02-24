@@ -116,7 +116,7 @@ const Calculator = () => {
                 </div>
                 <div>
                     <p>
-                        Below is a table with all the states and their minimum wage, and what the new Yearly Income would be if the Federal minimum wage was increaded to $15 per hour. * These states use the Federal minimum wage. *
+                        Below is a table with all the states and their minimum wage. I have included what the new Yearly Income would be if the Federal minimum wage was increased to $15 per hour as proposed by President Biden, and if it was increased to $24 per hour to match the increase in worker productivity as it should. * These states use the Federal minimum wage. *
                     </p>
                     <p>    
                         
