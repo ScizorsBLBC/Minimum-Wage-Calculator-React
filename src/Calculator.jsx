@@ -51,7 +51,30 @@ const Calculator = () => {
     }
     return (
         <section>
-            <div className="calculator">
+            <form 
+                className="calculator"
+                onSubmit={(event) => {
+                    event.preventDefault();
+                    handleCalculations();
+                }}>
+                <label for="calculator__state-select-input">
+                    Select the State you live in
+                </label>
+                <select className="calculator__state-select-input"
+                        onChange={ (event) => {
+                            setSelectedState(event.currentTarget.value)
+                            console.log(event.target.value)
+                        }}>
+                    <option value>
+                        Select your State
+                    </option>
+                    {wages.map((wage) => (
+                        <option key={wage.abbreviation} 
+                                value={wage.abbreviation}>
+                            {wage.name}
+                        </option>
+                    ))} 
+                </select>
                 <label for="calculator__num-weeks-worked-input">
                 How many weeks per year do you typically work?
                 </label>
@@ -80,27 +103,7 @@ const Calculator = () => {
                 <p>
                     {hoursPerWeekWorkedError}
                 </p>
-                <label for="calculator__state-select-input">
-                    Select the State you live in
-                </label>
-                <select className="calculator__state-select-input"
-                        onChange={ (event) => {
-                            setSelectedState(event.currentTarget.value)
-                            console.log(event.target.value)
-                        }}>
-                    <option value>
-                        Select your State
-                    </option>
-                    {wages.map((wage) => (
-                        <option key={wage.abbreviation} 
-                                value={wage.abbreviation}>
-                            {wage.name}
-                        </option>
-                    ))} 
-                </select>
-                <button className="calculator__submit-button"
-                    onClick={() => handleCalculations()}
-                    > 
+                <button type="submit" className="calculator__submit-button"> 
                     Enter info above and select your State
                 </button>
                 <p>
@@ -130,7 +133,7 @@ const Calculator = () => {
                     </small>
                 </div>
 
-            </div>
+            </form>
         </section>
 )}
 
