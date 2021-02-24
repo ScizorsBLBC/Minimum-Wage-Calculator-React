@@ -1,1 +1,0 @@
-# Minimum-Wage-Calculator-React
