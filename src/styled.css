@@ -13,8 +13,8 @@ body {
     
 }
 
-main {
-   
+.errorMessage {
+    color:rgb(128, 16, 16);
 }
 
 .answer {

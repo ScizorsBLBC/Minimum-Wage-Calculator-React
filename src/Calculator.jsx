@@ -18,21 +18,21 @@ const Calculator = () => {
     // where in our code do we the have the abbreviation we need to use
     const handleCalculations = () => {
         if (numWeeksWorked > 52) {
-           setNumWeeksWorkedError("Please enter a number between 1 and 52!")
+           setNumWeeksWorkedError("ERROR: Please enter a number between 1 and 52!")
        } else if (numWeeksWorked < 0) {
-        setNumWeeksWorkedError(`Please enter a number between 1 and 52!`)
+        setNumWeeksWorkedError(`ERROR: Please enter a number between 1 and 52!`)
        } else {
            setNumWeeksWorkedError(null)
        }
         if (hoursPerWeekWorked > (24*7)) {
-           setHoursPerWeekWorkedError(`Please enter a number between ${24*7}!`)
+           setHoursPerWeekWorkedError(`ERROR: Please enter a number between ${24*7}!`)
        } else if (hoursPerWeekWorked < 0) {
-           setHoursPerWeekWorkedError(`Please enter a number between ${24*7}!`)
+           setHoursPerWeekWorkedError(`ERROR: Please enter a number between ${24*7}!`)
        } else {
            setHoursPerWeekWorkedError(null)
        }
         if (selectedState === null) {
-            setSelectedStateError('Please select a state from the drop down menu!')
+            setSelectedStateError('ERROR: Please select a state from the drop down menu!')
             console.log("revolt!")
         } else if (selectedState !== null) {
             setSelectedStateError(null)
@@ -75,6 +75,9 @@ const Calculator = () => {
                         </option>
                     ))} 
                 </select>
+                <p className="errorMessage">
+                    {selectedStateError}
+                </p>
                 <label for="calculator__num-weeks-worked-input">
                 How many weeks per year do you typically work?
                 </label>
@@ -86,7 +89,7 @@ const Calculator = () => {
                         setNumWeeksWorked(event.target.value)
                     }}
                 />
-                <p>
+                <p className="errorMessage">
                     {numWeeksWorkedError}
                 </p>
                 <label for="calculator__hours-per-week-worked-input">
@@ -100,15 +103,13 @@ const Calculator = () => {
                         setHoursPerWeekWorked(event.target.value)
                     }}
                 />
-                <p>
+                <p className="errorMessage">
                     {hoursPerWeekWorkedError}
                 </p>
                 <button type="submit" className="calculator__submit-button"> 
                     Enter info above and select your State
                 </button>
-                <p>
-                    {selectedStateError}
-                </p>
+            
                 <div className="answer">
                     <p>
                         {numberFormat(answer)}
@@ -116,10 +117,10 @@ const Calculator = () => {
                 </div>
                 <div>
                     <p>
-                        Below is a table with all the states and their minimum wage. I have included what the new Yearly Income would be if the Federal minimum wage was increased to $15 per hour as proposed by President Biden, and if it was increased to $24 per hour to match the increase in worker productivity as it should. * These states use the Federal minimum wage. *
+                        Below is a table with all the states, their minimum wage, and a person's yearly income. I have included what the new yearly income would be if the Federal minimum wage was increased to $15 per hour as proposed by President Biden, and if it was increased to $24 per hour to match the increase in worker productivity as it should have done. The tables default values are set to working 50 weeks per year and 40 hours per week. 
                     </p>
                     <p>    
-                        
+                        * These states use the Federal minimum wage.
                     </p>   
                     <WageTable
                         hoursPerWeekWorked={hoursPerWeekWorked}
